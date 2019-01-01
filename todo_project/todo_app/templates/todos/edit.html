@@ -1,0 +1,23 @@
+<h1>Edit Page</h1>
+
+  
+  
+
+<form action="" method="post">
+    {% csrf_token %}
+    
+    
+    <p><label for="subject_input"></label>Subject</label></p>
+    <p><input type="text" name="subject" id="subject_input" value="{{ todo.subject }}"/></p>
+    
+    <p><label for="body_input">Body</label></p>
+    <p><textarea name="body" id="body_input" cols="30" rows="10" >{{ todo.body }}</textarea></p>
+    
+    <p><label for="is_completed_input">done?</label></p>
+    <input type="hidden" name="is_completed" value="off">
+    <p><input type="checkbox" name="is_completed" id="is_completed_input" {{todo.show_completed_on_off}} /></p>
+    
+    <p><button type="submit">Submit</button></p>
+    
+</form>
+<a href="{% url 'show' todo.id %}">Cancel</a>

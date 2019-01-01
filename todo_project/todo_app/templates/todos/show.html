@@ -1,0 +1,12 @@
+<h1>Subject: {{todo.subject}}</h1>
+<div>
+    <a href="{% url 'edit' todo.id %}">Edit</a>
+    <a href="{% url 'delete' todo.id %}" onclick="return confirm('Are you sure you want to delete this?')">Del</a>&nbsp;
+</div>
+<div>done?:{{todo.show_completed_box}}</div>
+<p>body:<br/>
+  {{todo.body}}
+</p> 
+
+<a href="{% url 'index'%}">Go back Home</a> 
+
